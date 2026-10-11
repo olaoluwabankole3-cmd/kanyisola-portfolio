@@ -167,7 +167,152 @@
     .modal-body ul { padding-left: 21px; }
     .modal-body li { margin: 7px 0; }
     .modal-footnote { padding: 12px 15px; background: var(--mint); border-radius: 12px; color: var(--teal-dark); font-size: .82rem; margin-top: 19px; }
-    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; } .reveal { opacity: 1; transform: none; } }
+    /* Motion layer: lightweight CSS effects, no animation libraries required. */
+    .js-reveal .reveal { opacity: 0; transform: translateY(22px); }
+    .js-reveal .reveal.visible { opacity: 1; transform: translateY(0); }
+    .scroll-progress-track { position: fixed; z-index: 200; top: 0; left: 0; width: 100%; height: 3px; pointer-events: none; background: transparent; }
+    .scroll-progress-bar { display: block; width: 0; height: 100%; background: linear-gradient(90deg, #147d78 0%, #58b8a5 62%, #d6a64f 100%); transform-origin: left; box-shadow: 0 0 14px rgba(20,125,120,.35); }
+    .hero { isolation: isolate; }
+    .hero::after { content: ""; position: absolute; z-index: -1; width: 340px; height: 340px; left: -190px; bottom: -190px; border-radius: 50%; background: radial-gradient(circle, rgba(214,166,79,.13), rgba(214,166,79,0) 69%); filter: blur(8px); pointer-events: none; animation: glow-drift 11s ease-in-out infinite alternate; }
+    .hero-copy { animation: hero-enter .8s cubic-bezier(.2,.75,.25,1) both; }
+    .hero-copy h1 span { position: relative; width: fit-content; }
+    .hero-copy h1 span::after { content: ""; display: block; height: 5px; width: 75%; margin-top: 10px; border-radius: 99px; background: linear-gradient(90deg, var(--gold), rgba(214,166,79,0)); transform-origin: left; animation: line-grow 1s .55s cubic-bezier(.2,.8,.2,1) both; }
+    .orb { animation: orb-breathe 8s ease-in-out infinite alternate; will-change: transform; }
+    .profile-card { animation: card-float 6.5s ease-in-out infinite; will-change: transform; }
+    .note-one { animation: note-float 5.5s ease-in-out infinite; }
+    .note-two { animation: note-float 6.5s 1s ease-in-out infinite reverse; }
+    .profile-card, .floating-note { backface-visibility: hidden; }
+    .brand-mark { transition: transform .3s ease, border-radius .3s ease; }
+    .brand:hover .brand-mark { transform: rotate(-7deg) scale(1.04); border-radius: 17px 12px 17px 12px; }
+    .nav-links a { position: relative; transition: color .2s ease; }
+    .nav-links a::after { content: ""; position: absolute; height: 2px; border-radius: 2px; left: 0; right: 100%; bottom: 3px; background: var(--gold); transition: right .22s ease; }
+    .nav-links a:hover::after, .nav-links a.active::after { right: 0; }
+    .nav-links a.active { color: var(--teal-dark); }
+    .button { position: relative; overflow: hidden; isolation: isolate; }
+    .button::after { content: ""; position: absolute; top: -60%; left: -90%; width: 45%; height: 220%; transform: rotate(22deg); background: linear-gradient(90deg, transparent, rgba(255,255,255,.22), transparent); transition: left .6s ease; z-index: -1; }
+    .button:hover::after { left: 145%; }
+    .service-card, .work-card, .education-card { transform: translateZ(0); }
+    .service-card::before { content: ""; display: block; height: 3px; position: absolute; left: 28px; right: 100%; top: 0; border-radius: 0 0 4px 4px; background: linear-gradient(90deg, var(--teal), var(--gold)); transition: right .3s ease; }
+    .service-card { position: relative; overflow: hidden; }
+    .service-card:hover::before { right: 28px; }
+    .service-icon { transition: transform .3s ease, background .3s ease; }
+    .service-card:hover .service-icon { transform: rotate(-5deg) translateY(-2px); background: #cceae2; }
+    .skill { transition: transform .2s ease, border-color .2s ease, background .2s ease, box-shadow .2s ease; }
+    .skill:hover { transform: translateY(-3px); border-color: rgba(20,125,120,.45); box-shadow: 0 8px 18px rgba(16,43,58,.06); background: var(--white); }
+    .work-card { transition: transform .28s ease, border-color .28s ease, background .28s ease; }
+    .work-card:hover { transform: translateY(-6px); border-color: rgba(157,213,203,.6); background: rgba(255,255,255,.075); }
+    .work-card:hover .work-index { color: var(--gold); }
+    .experience-item { transition: padding-left .25s ease; }
+    .experience-item:hover { padding-left: 8px; }
+    .experience-content li { transition: color .2s ease; }
+    .experience-content li:hover { color: var(--ink); }
+    .stats-grid { position: relative; }
+    .stat strong { transition: color .25s ease; }
+    .stat:hover strong { color: var(--teal); }
+    .contact-panel .button { box-shadow: 0 8px 22px rgba(20,125,120,.1); }
+    @keyframes hero-enter { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes line-grow { from { transform: scaleX(.15); opacity: .35; } to { transform: scaleX(1); opacity: 1; } }
+    @keyframes glow-drift { from { transform: translate3d(0,0,0) scale(.9); opacity: .65; } to { transform: translate3d(40px,-20px,0) scale(1.12); opacity: 1; } }
+    @keyframes orb-breathe { from { transform: translate3d(0,0,0) scale(.99); } to { transform: translate3d(0,-8px,0) scale(1.025); } }
+    @keyframes card-float { 0%, 100% { transform: rotate(2.5deg) translateY(0); } 50% { transform: rotate(1.4deg) translateY(-8px); } }
+    @keyframes note-float { 0%, 100% { translate: 0 0; } 50% { translate: 0 -7px; } }
+    @media (max-width: 1024px) {
+      .hero-grid { gap: 24px; grid-template-columns: minmax(0,1fr) minmax(300px,.84fr); }
+      .hero-visual { min-height: 430px; }
+      .orb { width: 300px; height: 300px; }
+      .profile-card { padding: 23px; }
+      .note-one { right: -2px; }
+      .note-two { left: -2px; }
+      .about-grid { gap: 42px; }
+      .tools-grid { gap: 38px; }
+    }
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 12px; }
+      .hero-copy { max-width: 740px; }
+      .hero-visual { min-height: 455px; }
+      .orb { width: 330px; height: 330px; }
+      .profile-card { width: min(100%, 355px); padding: 28px; }
+      .note-one { right: max(2%, calc((100% - 520px) / 2)); }
+      .note-two { left: max(2%, calc((100% - 520px) / 2)); }
+      .about-grid, .tools-grid { grid-template-columns: 1fr; gap: 34px; }
+      .about-aside { max-width: 560px; }
+    }
+    @media (max-width: 760px) {
+      .scroll-progress-track { height: 3px; }
+      .hero-copy { animation-duration: .6s; }
+      .hero-visual { min-height: 420px; margin-inline: auto; width: 100%; max-width: 540px; }
+      .orb { width: min(78vw, 320px); height: min(78vw, 320px); }
+      .profile-card { max-width: min(355px, calc(100% - 26px)); }
+      .floating-note { max-width: 76%; }
+      .note-one { right: 0; top: 14px; }
+      .note-two { left: 0; bottom: 12px; }
+      .section-head { margin-bottom: 31px; }
+      .section-intro { font-size: .94rem; }
+      .service-card::before { left: 24px; }
+      .service-card:hover::before { right: 24px; }
+      .experience-item:hover { padding-left: 0; }
+      .skill:hover { transform: none; }
+      .work-card:hover { transform: none; }
+    }
+    @media (max-width: 480px) {
+      .wrap { width: calc(100% - 32px); }
+      .brand { gap: 10px; min-width: 0; }
+      .brand-mark { width: 39px; height: 39px; flex-shrink: 0; }
+      .brand span:last-child { white-space: normal; line-height: 1.15; max-width: 145px; }
+      .nav { gap: 10px; }
+      .menu-toggle { flex-shrink: 0; width: 42px; height: 42px; }
+      .nav-links { top: 69px; padding-inline: 20px; }
+      .hero { padding: 48px 0 49px; }
+      .availability { font-size: .69rem; padding: 7px 10px; }
+      .eyebrow { font-size: .68rem; letter-spacing: .13em; }
+      h1 { font-size: clamp(3.05rem, 14.5vw, 4.1rem); }
+      .hero-lede { font-size: 1rem; line-height: 1.7; }
+      .hero-actions { gap: 10px; }
+      .hero-actions .button { width: 100%; }
+      .hero-meta { align-items: flex-start; font-size: .79rem; }
+      .hero-visual { min-height: 385px; margin-top: 8px; }
+      .orb { width: min(76vw, 285px); height: min(76vw, 285px); }
+      .profile-card { padding: 19px; border-radius: 21px; }
+      .profile-top { padding-bottom: 17px; gap: 10px; }
+      .monogram { width: 49px; height: 49px; border-radius: 15px; font-size: 1.3rem; }
+      .card-label { margin: 18px 0 8px; font-size: .66rem; }
+      .promise { padding: 10px 0; font-size: .82rem; gap: 9px; }
+      .check { width: 22px; height: 22px; flex-basis: 22px; }
+      .floating-note { padding: 11px 13px; font-size: .7rem; border-radius: 12px; }
+      .floating-note strong { font-size: .82rem; }
+      .note-one { top: 4px; right: -1px; }
+      .note-two { bottom: 3px; left: -1px; }
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+      .stat strong { font-size: 1.7rem; }
+      .stat span { display: block; font-size: .77rem; line-height: 1.45; }
+      .stat + .stat { padding-left: 15px; }
+      .principles { grid-template-columns: 1fr; gap: 15px; }
+      .about-aside { padding: 24px; }
+      .about-aside p { font-size: 1.28rem; }
+      .service-card, .work-card, .education-card { padding: 23px; }
+      .experience-date { font-size: .78rem; }
+      .experience-content h3 { font-size: 1.3rem; }
+      .skills-list { gap: 8px; }
+      .skill { padding: 8px 11px; font-size: .8rem; }
+      .contact { padding: 20px 0 66px; }
+      .contact-panel { padding: 27px 22px; border-radius: 23px; }
+      .contact-actions { flex-direction: column; }
+      .contact-actions .button { width: 100%; }
+      .footer-inner { font-size: .78rem; }
+      .footer-links { gap: 17px; flex-wrap: wrap; }
+      .modal { padding: 12px; }
+      .modal-panel { padding: 21px; border-radius: 20px; }
+    }
+    @media (hover: none) and (pointer: coarse) {
+      .service-card:hover, .work-card:hover, .education-card:hover { transform: none; box-shadow: none; }
+      .button:hover::after { left: -90%; }
+      .nav-links a:hover::after { right: 100%; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+      .reveal, .js-reveal .reveal, .js-reveal .reveal.visible { opacity: 1; transform: none; }
+      .scroll-progress-bar { box-shadow: none; }
+    }
     @media (max-width: 960px) {
       .hero-grid { gap: 25px; grid-template-columns: 1fr 360px; }
       .hero-visual { min-height: 440px; }
@@ -238,6 +383,7 @@
   </style>
 </head>
 <body>
+  <div class="scroll-progress-track" aria-hidden="true"><span class="scroll-progress-bar" id="scrollProgress"></span></div>
   <header class="topbar">
     <nav class="nav wrap" aria-label="Main navigation">
       <a class="brand" href="#home" aria-label="Audu Kanyinsola home">
@@ -293,8 +439,8 @@
 
     <section class="stats" aria-label="Experience at a glance">
       <div class="wrap stats-grid">
-        <div class="stat"><strong>2+ years</strong><span>of executive and administrative support</span></div>
-        <div class="stat"><strong>3 roles</strong><span>across executive support and client operations</span></div>
+        <div class="stat"><strong data-count="2" data-after="+ years">2+ years</strong><span>of executive and administrative support</span></div>
+        <div class="stat"><strong data-count="3" data-after=" roles">3 roles</strong><span>across executive support and client operations</span></div>
         <div class="stat"><strong>One focus</strong><span>making everyday work run more smoothly</span></div>
       </div>
     </section>
@@ -509,6 +655,7 @@
 
   <script>
     (function () {
+      document.documentElement.classList.add('js-reveal');
       var menuToggle = document.getElementById('menuToggle');
       var navLinks = document.getElementById('navLinks');
       menuToggle.addEventListener('click', function () {
@@ -586,16 +733,73 @@
       modal.addEventListener('click', function (event) { if (event.target === modal) closeModal(); });
       document.addEventListener('keydown', function (event) { if (event.key === 'Escape') closeModal(); });
 
+      // Scroll progress indicator; passive scroll handler keeps it light.
+      var progressBar = document.getElementById('scrollProgress');
+      var scrollTicking = false;
+      function updateScrollProgress() {
+        var scrollable = document.documentElement.scrollHeight - window.innerHeight;
+        var progress = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
+        progressBar.style.width = Math.min(100, Math.max(0, progress)) + '%';
+        scrollTicking = false;
+      }
+      window.addEventListener('scroll', function () {
+        if (!scrollTicking) {
+          window.requestAnimationFrame(updateScrollProgress);
+          scrollTicking = true;
+        }
+      }, { passive: true });
+      updateScrollProgress();
+
       if ('IntersectionObserver' in window) {
-        var observer = new IntersectionObserver(function (entries) {
+        var revealObserver = new IntersectionObserver(function (entries) {
           entries.forEach(function (entry) {
             if (entry.isIntersecting) {
               entry.target.classList.add('visible');
-              observer.unobserve(entry.target);
+              revealObserver.unobserve(entry.target);
             }
           });
-        }, { threshold: 0.12 });
-        document.querySelectorAll('.reveal').forEach(function (el) { observer.observe(el); });
+        }, { threshold: 0.12, rootMargin: '0px 0px -28px 0px' });
+        document.querySelectorAll('.reveal').forEach(function (el) { revealObserver.observe(el); });
+
+        // Keep the navigation underline aligned with the section being read.
+        var sectionLinks = Array.prototype.slice.call(document.querySelectorAll('#navLinks a'));
+        var sectionObserver = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            sectionLinks.forEach(function (link) {
+              var active = link.getAttribute('href') === '#' + entry.target.id;
+              link.classList.toggle('active', active);
+              if (active) link.setAttribute('aria-current', 'location');
+              else link.removeAttribute('aria-current');
+            });
+          });
+        }, { rootMargin: '-24% 0px -65% 0px', threshold: 0 });
+        sectionLinks.forEach(function (link) {
+          var section = document.querySelector(link.getAttribute('href'));
+          if (section) sectionObserver.observe(section);
+        });
+
+        // Count-up is triggered once when the facts row comes into view.
+        var counters = document.querySelectorAll('[data-count]');
+        var counterObserver = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            var node = entry.target;
+            counterObserver.unobserve(node);
+            var target = Number(node.getAttribute('data-count'));
+            var suffix = node.getAttribute('data-after') || '';
+            var start = performance.now();
+            var duration = 850;
+            function countFrame(now) {
+              var ratio = Math.min(1, (now - start) / duration);
+              var eased = 1 - Math.pow(1 - ratio, 3);
+              node.textContent = Math.round(target * eased) + suffix;
+              if (ratio < 1) window.requestAnimationFrame(countFrame);
+            }
+            window.requestAnimationFrame(countFrame);
+          });
+        }, { threshold: 0.7 });
+        counters.forEach(function (counter) { counterObserver.observe(counter); });
       } else {
         document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('visible'); });
       }
