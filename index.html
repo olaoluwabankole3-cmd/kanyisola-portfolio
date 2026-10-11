@@ -1,0 +1,605 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102b3a">
+  <meta name="description" content="Audu Kanyinsola — Executive Assistant and Administrative Professional supporting leaders with thoughtful coordination, reliable operations, and clear communication.">
+  <meta property="og:title" content="Audu Kanyinsola | Executive Assistant">
+  <meta property="og:description" content="Thoughtful executive support. Well-run operations. More room for leaders to lead.">
+  <meta property="og:type" content="website">
+  <title>Audu Kanyinsola | Executive Assistant & Administrative Professional</title>
+  <style>
+    :root {
+      --ink: #102b3a;
+      --ink-soft: #294653;
+      --teal: #147d78;
+      --teal-dark: #0e625e;
+      --mint: #dff2ed;
+      --paper: #f7f6f1;
+      --white: #fffefa;
+      --gold: #d6a64f;
+      --muted: #697981;
+      --line: rgba(16,43,58,.14);
+      --shadow: 0 24px 70px rgba(16,43,58,.11);
+      --radius: 24px;
+      --max: 1160px;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 92px; }
+    body {
+      margin: 0; background: var(--paper); color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65; -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    a:focus-visible, button:focus-visible { outline: 3px solid var(--gold); outline-offset: 4px; }
+    .wrap { width: min(var(--max), calc(100% - 48px)); margin-inline: auto; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 10px; color: var(--teal); font-size: .76rem; letter-spacing: .16em; text-transform: uppercase; font-weight: 800; }
+    .eyebrow::before { content: ""; width: 27px; height: 2px; background: var(--gold); }
+    .section { padding: 108px 0; }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 36px; margin-bottom: 42px; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, h3 { line-height: 1.1; letter-spacing: -.045em; }
+    h2 { font-size: clamp(2.1rem, 4vw, 3.45rem); max-width: 690px; margin: 16px 0 0; }
+    .section-intro { max-width: 400px; color: var(--muted); margin: 0; font-size: .98rem; }
+    .topbar { position: sticky; top: 0; z-index: 100; background: rgba(247,246,241,.91); border-bottom: 1px solid rgba(16,43,58,.08); backdrop-filter: blur(18px); }
+    .nav { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: inline-flex; align-items: center; gap: 12px; font-weight: 850; letter-spacing: -.04em; font-size: 1rem; white-space: nowrap; }
+    .brand-mark { display: grid; place-items: center; width: 42px; height: 42px; border-radius: 13px; color: var(--white); background: var(--ink); font-family: Georgia, serif; font-size: 1.3rem; font-weight: 700; position: relative; }
+    .brand-mark::after { content: ""; width: 8px; height: 8px; border-radius: 50%; position: absolute; right: -3px; bottom: -2px; background: var(--gold); border: 2px solid var(--paper); }
+    .nav-links { display: flex; align-items: center; gap: 28px; color: #52656d; font-size: .88rem; font-weight: 650; }
+    .nav-links a:hover { color: var(--teal); }
+    .nav-cta, .button { display: inline-flex; align-items: center; justify-content: center; gap: 10px; border: 0; border-radius: 999px; background: var(--teal); color: white; font: inherit; font-weight: 750; font-size: .9rem; padding: 13px 20px; cursor: pointer; transition: transform .2s ease, background .2s ease, box-shadow .2s ease; }
+    .nav-cta:hover, .button:hover { background: var(--teal-dark); transform: translateY(-2px); box-shadow: 0 12px 24px rgba(20,125,120,.2); }
+    .button-secondary { background: transparent; color: var(--ink); border: 1px solid var(--line); }
+    .button-secondary:hover { background: var(--white); color: var(--ink); box-shadow: none; }
+    .menu-toggle { display: none; border: 1px solid var(--line); background: transparent; border-radius: 12px; width: 44px; height: 44px; color: var(--ink); font-size: 1.2rem; }
+    .hero { position: relative; overflow: hidden; padding: 83px 0 96px; }
+    .hero::before { content: ""; position: absolute; width: 580px; height: 580px; border: 1px solid rgba(20,125,120,.15); border-radius: 50%; top: -330px; right: -155px; box-shadow: 0 0 0 42px rgba(20,125,120,.025), 0 0 0 85px rgba(20,125,120,.02); pointer-events: none; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0,1.08fr) minmax(340px,.92fr); align-items: center; gap: 70px; position: relative; }
+    .availability { display: inline-flex; align-items: center; gap: 9px; border: 1px solid rgba(20,125,120,.19); border-radius: 100px; padding: 7px 12px; font-size: .77rem; color: var(--teal-dark); background: rgba(223,242,237,.54); font-weight: 700; margin-bottom: 26px; }
+    .availability-dot { width: 7px; height: 7px; border-radius: 50%; background: #299879; box-shadow: 0 0 0 4px rgba(41,152,121,.11); }
+    h1 { font-size: clamp(3.5rem, 7.7vw, 6.4rem); margin: 0 0 20px; line-height: .98; }
+    h1 span { color: var(--teal); display: block; }
+    .hero-lede { color: #536770; font-size: clamp(1.05rem, 1.5vw, 1.22rem); max-width: 565px; line-height: 1.8; margin-bottom: 30px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 36px; }
+    .hero-meta { display: flex; align-items: center; gap: 11px; color: var(--muted); font-size: .85rem; }
+    .hero-meta svg { color: var(--teal); flex-shrink: 0; }
+    .hero-visual { min-height: 490px; position: relative; display: flex; align-items: center; justify-content: center; }
+    .orb { position: absolute; width: 385px; height: 385px; border-radius: 50%; background: radial-gradient(circle at 31% 25%, #e1f3ed 0, #b7dbd2 43%, #8bbab2 72%, #7badab 100%); opacity: .8; }
+    .orb::before, .orb::after { content: ""; position: absolute; border-radius: 50%; border: 1px solid rgba(16,43,58,.15); inset: -25px; }
+    .orb::after { inset: -52px; border-color: rgba(16,43,58,.08); }
+    .profile-card { position: relative; z-index: 1; width: min(100%, 355px); padding: 28px; background: rgba(255,254,250,.91); border: 1px solid rgba(255,255,255,.8); border-radius: 26px; box-shadow: var(--shadow); transform: rotate(2.5deg); }
+    .profile-top { display: flex; align-items: center; gap: 13px; padding-bottom: 23px; border-bottom: 1px solid var(--line); }
+    .monogram { display: grid; place-items: center; width: 58px; height: 58px; border-radius: 18px; color: white; background: var(--ink); font-family: Georgia, serif; font-size: 1.5rem; letter-spacing: -.06em; }
+    .profile-top strong { display: block; font-size: 1rem; letter-spacing: -.025em; }
+    .profile-top small { color: var(--muted); font-size: .8rem; }
+    .card-label { color: var(--teal); font-size: .72rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; margin: 23px 0 13px; }
+    .promise { display: flex; gap: 12px; align-items: flex-start; padding: 12px 0; font-size: .91rem; font-weight: 650; border-bottom: 1px solid rgba(16,43,58,.075); }
+    .promise:last-of-type { border-bottom: 0; }
+    .check { display: grid; place-items: center; flex: 0 0 24px; width: 24px; height: 24px; border-radius: 50%; background: var(--mint); color: var(--teal-dark); font-size: .82rem; }
+    .floating-note { position: absolute; z-index: 2; background: var(--ink); color: white; border-radius: 16px; box-shadow: 0 16px 36px rgba(16,43,58,.17); padding: 15px 18px; font-size: .8rem; }
+    .floating-note strong { display: block; font-size: 1rem; margin-bottom: 2px; }
+    .note-one { top: 40px; right: -4px; transform: rotate(-4deg); }
+    .note-two { bottom: 32px; left: -4px; transform: rotate(-3deg); background: white; color: var(--ink); border: 1px solid var(--line); }
+    .note-two strong { color: var(--teal); }
+    .stats { padding: 0 0 24px; }
+    .stats-grid { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); display: grid; grid-template-columns: repeat(3, 1fr); }
+    .stat { padding: 24px 30px 24px 0; }
+    .stat + .stat { border-left: 1px solid var(--line); padding-left: 30px; }
+    .stat strong { display: block; font-family: Georgia, serif; font-size: 2rem; font-weight: 500; letter-spacing: -.05em; }
+    .stat span { color: var(--muted); font-size: .86rem; }
+    .about-grid { display: grid; grid-template-columns: .75fr 1.25fr; gap: 88px; align-items: start; }
+    .about-aside { padding: 30px; border-radius: var(--radius); background: var(--ink); color: white; position: relative; overflow: hidden; }
+    .about-aside::after { content: "K"; position: absolute; bottom: -110px; right: -3px; color: rgba(255,255,255,.05); font-family: Georgia, serif; font-size: 22rem; line-height: 1; }
+    .quote-mark { color: var(--gold); font-family: Georgia, serif; font-size: 3.4rem; line-height: .8; margin-bottom: 22px; }
+    .about-aside p { position: relative; z-index: 1; font-family: Georgia, serif; font-size: 1.45rem; line-height: 1.45; letter-spacing: -.025em; margin-bottom: 26px; }
+    .about-aside small { position: relative; z-index: 1; color: #bfd0d4; font-size: .82rem; }
+    .about-copy h2 { margin: 15px 0 23px; }
+    .about-copy p { color: #536770; font-size: 1.02rem; max-width: 690px; }
+    .principles { display: grid; grid-template-columns: 1fr 1fr; gap: 17px; margin-top: 32px; }
+    .principle { padding-top: 16px; border-top: 2px solid var(--gold); }
+    .principle strong { display: block; margin-bottom: 5px; }
+    .principle span { color: var(--muted); font-size: .88rem; }
+    .services { background: #edf2ee; }
+    .service-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+    .service-card { padding: 29px; border-radius: 20px; border: 1px solid rgba(16,43,58,.09); background: rgba(255,254,250,.74); transition: transform .25s ease, box-shadow .25s ease; }
+    .service-card:hover { transform: translateY(-5px); box-shadow: 0 20px 35px rgba(16,43,58,.08); }
+    .service-icon { display: grid; place-items: center; width: 46px; height: 46px; border-radius: 15px; background: var(--mint); color: var(--teal-dark); margin-bottom: 27px; }
+    .service-card h3 { font-size: 1.2rem; letter-spacing: -.03em; margin-bottom: 13px; }
+    .service-card p { color: var(--muted); font-size: .9rem; margin-bottom: 16px; }
+    .service-card ul { margin: 0; padding: 0; list-style: none; }
+    .service-card li { font-size: .85rem; padding: 7px 0; border-top: 1px solid rgba(16,43,58,.08); color: var(--ink-soft); }
+    .service-card li::before { content: "↗"; color: var(--teal); margin-right: 8px; font-weight: 800; }
+    .experience-list { border-top: 1px solid var(--line); }
+    .experience-item { display: grid; grid-template-columns: 190px 1fr; gap: 44px; padding: 34px 0; border-bottom: 1px solid var(--line); }
+    .experience-date { color: var(--teal); font-size: .83rem; letter-spacing: .04em; font-weight: 800; }
+    .experience-date span { display: block; margin-top: 8px; color: var(--muted); font-weight: 500; letter-spacing: 0; }
+    .experience-content h3 { font-size: 1.42rem; margin: 0 0 6px; }
+    .experience-content .role { color: var(--muted); font-size: .91rem; margin-bottom: 16px; }
+    .experience-content ul { display: grid; grid-template-columns: 1fr 1fr; gap: 9px 24px; padding-left: 18px; margin: 0; color: #52656d; font-size: .91rem; }
+    .experience-content li::marker { color: var(--gold); }
+    .tools-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 70px; }
+    .skills-list { display: flex; align-content: flex-start; flex-wrap: wrap; gap: 10px; }
+    .skill { border: 1px solid var(--line); border-radius: 100px; padding: 9px 14px; background: rgba(255,254,250,.64); font-size: .87rem; color: var(--ink-soft); }
+    .skill.featured { border-color: rgba(20,125,120,.24); background: var(--mint); color: var(--teal-dark); }
+    .skills-copy { color: var(--muted); font-size: .95rem; margin-top: 22px; }
+    .work { background: var(--ink); color: white; }
+    .work .eyebrow { color: #9dd5cb; }
+    .work .section-intro { color: #bacbd0; }
+    .work-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+    .work-card { padding: 25px; border: 1px solid rgba(255,255,255,.15); border-radius: 20px; background: rgba(255,255,255,.045); display: flex; flex-direction: column; min-height: 300px; }
+    .work-card-top { display: flex; justify-content: space-between; gap: 12px; align-items: center; margin-bottom: 25px; }
+    .work-type { color: #a9d8d0; font-size: .7rem; font-weight: 800; text-transform: uppercase; letter-spacing: .12em; }
+    .work-index { color: rgba(255,255,255,.43); font-family: Georgia,serif; font-size: 1.35rem; }
+    .work-card h3 { font-size: 1.35rem; margin-bottom: 12px; }
+    .work-card p { color: #bfd0d4; font-size: .9rem; margin-bottom: 22px; }
+    .work-card .sample-note { font-size: .75rem; color: #d8c69d; border-top: 1px solid rgba(255,255,255,.13); padding-top: 15px; margin-top: auto; }
+    .sample-link { display: inline-flex; align-items: center; gap: 8px; margin-top: auto; font-size: .84rem; color: white; font-weight: 700; padding-top: 15px; background: none; border: 0; text-align: left; cursor: pointer; }
+    .sample-link:hover { color: #a9d8d0; }
+    .education-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .education-card { padding: 28px; border: 1px solid var(--line); border-radius: 20px; background: rgba(255,254,250,.68); }
+    .education-card .mini-label { color: var(--teal); text-transform: uppercase; letter-spacing: .13em; font-size: .72rem; font-weight: 800; margin-bottom: 14px; }
+    .education-card h3 { font-size: 1.28rem; margin-bottom: 8px; }
+    .education-card p { color: var(--muted); font-size: .9rem; margin-bottom: 0; }
+    .education-card .second-course { border-top: 1px solid var(--line); padding-top: 20px; margin-top: 20px; }
+    .contact { padding: 35px 0 95px; }
+    .contact-panel { position: relative; overflow: hidden; border-radius: 30px; padding: clamp(32px, 6vw, 68px); background: var(--mint); display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 35px; }
+    .contact-panel::after { content: ""; position: absolute; width: 270px; height: 270px; border-radius: 50%; border: 1px solid rgba(20,125,120,.19); right: 30%; bottom: -210px; box-shadow: 0 0 0 25px rgba(20,125,120,.035), 0 0 0 50px rgba(20,125,120,.025); }
+    .contact-panel h2 { max-width: 650px; margin: 14px 0 14px; }
+    .contact-panel p { color: #49696b; margin: 0; max-width: 560px; }
+    .contact-actions { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 11px; min-width: 195px; }
+    footer { border-top: 1px solid var(--line); padding: 25px 0 34px; color: var(--muted); font-size: .82rem; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a:hover { color: var(--teal); }
+    .reveal { opacity: 0; transform: translateY(17px); transition: opacity .65s ease, transform .65s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .modal { position: fixed; inset: 0; z-index: 300; display: none; align-items: center; justify-content: center; padding: 20px; background: rgba(6,24,32,.72); backdrop-filter: blur(8px); }
+    .modal.open { display: flex; }
+    .modal-panel { background: var(--white); color: var(--ink); max-width: 650px; width: 100%; max-height: 85vh; overflow: auto; border-radius: 24px; padding: 30px; box-shadow: 0 30px 100px rgba(0,0,0,.3); }
+    .modal-head { display: flex; align-items: start; justify-content: space-between; gap: 20px; }
+    .modal-head h3 { font-size: 1.6rem; margin-bottom: 8px; }
+    .modal-close { border: 1px solid var(--line); border-radius: 11px; width: 40px; height: 40px; background: transparent; color: var(--ink); font-size: 1.25rem; cursor: pointer; flex-shrink: 0; }
+    .modal-body { color: #536770; font-size: .93rem; }
+    .modal-body ul { padding-left: 21px; }
+    .modal-body li { margin: 7px 0; }
+    .modal-footnote { padding: 12px 15px; background: var(--mint); border-radius: 12px; color: var(--teal-dark); font-size: .82rem; margin-top: 19px; }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; } .reveal { opacity: 1; transform: none; } }
+    @media (max-width: 960px) {
+      .hero-grid { gap: 25px; grid-template-columns: 1fr 360px; }
+      .hero-visual { min-height: 440px; }
+      .orb { width: 310px; height: 310px; }
+      .note-one { right: 0; }
+      .note-two { left: 0; }
+      .about-grid { gap: 45px; }
+      .experience-item { grid-template-columns: 150px 1fr; gap: 25px; }
+      .tools-grid { gap: 35px; }
+      .nav-links { gap: 17px; }
+    }
+    @media (max-width: 760px) {
+      .wrap { width: min(var(--max), calc(100% - 34px)); }
+      .section { padding: 78px 0; }
+      .nav { min-height: 70px; }
+      .menu-toggle { display: inline-grid; place-items: center; }
+      .nav-cta { display: none; }
+      .nav-links { display: none; position: absolute; top: 69px; left: 0; right: 0; padding: 20px 24px 24px; flex-direction: column; align-items: stretch; gap: 0; background: var(--paper); border-bottom: 1px solid var(--line); box-shadow: 0 15px 22px rgba(16,43,58,.06); }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 12px 0; }
+      .hero { padding: 56px 0 67px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 14px; }
+      h1 { font-size: clamp(3.4rem, 15vw, 5rem); }
+      .hero-visual { min-height: 430px; }
+      .profile-card { max-width: 340px; }
+      .note-one { right: 1%; top: 20px; }
+      .note-two { left: 0; bottom: 15px; }
+      .section-head { display: block; }
+      .section-intro { margin-top: 18px; }
+      .about-grid, .tools-grid { grid-template-columns: 1fr; gap: 32px; }
+      .about-aside { max-width: 470px; }
+      .service-grid, .work-grid { grid-template-columns: 1fr; }
+      .service-card { padding: 25px; }
+      .service-icon { margin-bottom: 18px; }
+      .experience-item { grid-template-columns: 1fr; gap: 13px; }
+      .experience-date span { display: inline; margin-left: 8px; }
+      .experience-content ul { grid-template-columns: 1fr; gap: 8px; }
+      .education-grid { grid-template-columns: 1fr; }
+      .contact-panel { grid-template-columns: 1fr; }
+      .contact-actions { flex-direction: row; flex-wrap: wrap; }
+      .contact-actions .button { flex: 1 1 auto; }
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+      .stat { padding: 18px 12px 18px 0; }
+      .stat + .stat { padding-left: 18px; }
+      .stat:nth-child(3) { grid-column: 1 / -1; border-top: 1px solid var(--line); border-left: 0; padding-left: 0; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+    }
+    @media (max-width: 390px) {
+      .brand { font-size: .91rem; }
+      .hero-actions .button { width: 100%; }
+      .hero-visual { min-height: 400px; }
+      .orb { width: 270px; height: 270px; }
+      .profile-card { padding: 22px; }
+      .note-one, .note-two { font-size: .72rem; }
+      .contact-actions { flex-direction: column; }
+    }
+    @media print {
+      .topbar, .hero-actions, .contact-actions, .modal, .menu-toggle { display: none !important; }
+      body { background: white; }
+      .section, .hero { padding: 36px 0; }
+      .reveal { opacity: 1; transform: none; }
+      .work { background: #f2f5f4; color: var(--ink); }
+      .work .section-intro, .work-card p { color: #536770; }
+      .work-card { border-color: var(--line); }
+      .work-card h3, .work-card .sample-link { color: var(--ink); }
+      .work-card .sample-note { color: #82621e; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <nav class="nav wrap" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="Audu Kanyinsola home">
+        <span class="brand-mark">AK</span>
+        <span>Audu Kanyinsola</span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#services">What I do</a>
+        <a href="#experience">Experience</a>
+        <a href="#work">Work samples</a>
+        <a href="#education">Education</a>
+      </div>
+      <a class="nav-cta" href="#contact">Let’s connect <span aria-hidden="true">↗</span></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false" aria-controls="navLinks">☰</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <div class="availability"><span class="availability-dot"></span> Executive support · Administrative operations</div>
+          <p class="eyebrow">A thoughtful partner behind the scenes</p>
+          <h1>Making busy<br>days feel <span>more in order.</span></h1>
+          <p class="hero-lede">I’m Audu Kanyinsola — an Executive Assistant and Administrative Professional who brings structure to schedules, clarity to communication, and care to the details that keep work moving.</p>
+          <div class="hero-actions">
+            <a class="button" href="#contact">Let’s work together <span aria-hidden="true">↗</span></a>
+            <a class="button button-secondary" href="#experience">Explore my experience <span aria-hidden="true">↓</span></a>
+          </div>
+          <div class="hero-meta">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="1.7"/></svg>
+            Based in Nigeria <span aria-hidden="true">·</span> Open to meaningful opportunities
+          </div>
+        </div>
+        <div class="hero-visual" aria-label="Introduction card">
+          <div class="orb"></div>
+          <div class="floating-note note-one"><strong>Calm, clear, considered.</strong>Even when the day gets busy.</div>
+          <div class="profile-card">
+            <div class="profile-top">
+              <div class="monogram">AK</div>
+              <div><strong>Audu Kanyinsola</strong><small>Executive Assistant</small></div>
+            </div>
+            <p class="card-label">The support I bring</p>
+            <div class="promise"><span class="check">✓</span><span>Organised calendars and purposeful meetings</span></div>
+            <div class="promise"><span class="check">✓</span><span>Clear communication and thoughtful follow-through</span></div>
+            <div class="promise"><span class="check">✓</span><span>Reliable records, coordination, and office workflows</span></div>
+          </div>
+          <div class="floating-note note-two"><strong>Details matter.</strong>So does the bigger picture.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats" aria-label="Experience at a glance">
+      <div class="wrap stats-grid">
+        <div class="stat"><strong>2+ years</strong><span>of executive and administrative support</span></div>
+        <div class="stat"><strong>3 roles</strong><span>across executive support and client operations</span></div>
+        <div class="stat"><strong>One focus</strong><span>making everyday work run more smoothly</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="wrap about-grid">
+        <aside class="about-aside reveal">
+          <div class="quote-mark">“</div>
+          <p>Good support isn’t about making noise. It’s about making the right things happen, at the right time.</p>
+          <small>A principle I bring to every working relationship.</small>
+        </aside>
+        <div class="about-copy reveal">
+          <p class="eyebrow">A little about me</p>
+          <h2>Dependable support, with a thoughtful human touch.</h2>
+          <p>I help busy professionals stay focused by keeping the moving parts organised. My experience spans executive scheduling, meeting coordination, travel planning, documentation, client communication, event logistics, and day-to-day office operations.</p>
+          <p>I value discretion, clear communication, and doing the small things well. I’m comfortable balancing competing priorities, keeping information organised, and following tasks through so that fewer details are left hanging.</p>
+          <div class="principles">
+            <div class="principle"><strong>Proactive by nature</strong><span>I look ahead, prepare early, and help reduce avoidable last-minute pressure.</span></div>
+            <div class="principle"><strong>Grounded in trust</strong><span>I handle information thoughtfully and treat people with respect.</span></div>
+            <div class="principle"><strong>Structured, not rigid</strong><span>I create clear systems that can adapt when priorities change.</span></div>
+            <div class="principle"><strong>Follow-through focused</strong><span>I keep track of next steps and close communication loops.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section services" id="services">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div><p class="eyebrow">How I can help</p><h2>Practical support that creates room to focus.</h2></div>
+          <p class="section-intro">The goal is simple: less time lost to preventable admin, and more space for leaders and teams to do their best work.</p>
+        </div>
+        <div class="service-grid">
+          <article class="service-card reveal">
+            <div class="service-icon" aria-hidden="true"><svg width="23" height="23" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.7"/><path d="M16 3v4M8 3v4M3 10h18" stroke="currentColor" stroke-width="1.7"/></svg></div>
+            <h3>Executive & calendar support</h3>
+            <p>Protecting time, preparing meetings, and helping priorities stay visible.</p>
+            <ul><li>Calendar management and scheduling</li><li>Meeting preparation and minutes</li><li>Inbox triage and correspondence</li><li>Travel plans and itineraries</li></ul>
+          </article>
+          <article class="service-card reveal">
+            <div class="service-icon" aria-hidden="true"><svg width="23" height="23" viewBox="0 0 24 24" fill="none"><path d="M4 20V7l8-4 8 4v13H4Z" stroke="currentColor" stroke-width="1.7"/><path d="M9 20v-6h6v6M8 9h.01M12 9h.01M16 9h.01" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+            <h3>Administrative operations</h3>
+            <p>Keeping information, resources, and everyday office tasks in good order.</p>
+            <ul><li>Digital filing and record keeping</li><li>Vendor and expense tracking</li><li>Inventory and office coordination</li><li>Task lists and follow-up systems</li></ul>
+          </article>
+          <article class="service-card reveal">
+            <div class="service-icon" aria-hidden="true"><svg width="23" height="23" viewBox="0 0 24 24" fill="none"><path d="M4 5h16v11H8l-4 4V5Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M8 9h8M8 12h5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+            <h3>Client & project coordination</h3>
+            <p>Helping clients, partners, and teams stay informed and aligned.</p>
+            <ul><li>Client communication and CRM updates</li><li>Event and exhibition logistics</li><li>Proposal and invoice preparation</li><li>Stakeholder coordination</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div><p class="eyebrow">Professional journey</p><h2>Experience built on dependable execution.</h2></div>
+          <p class="section-intro">A practical mix of executive support, office operations, and client-facing coordination.</p>
+        </div>
+        <div class="experience-list">
+          <article class="experience-item reveal">
+            <div class="experience-date">NOV 2025 — JUL 2026<span>9 months</span></div>
+            <div class="experience-content">
+              <h3>Kansi Pjs</h3><p class="role">Executive Assistant</p>
+              <ul>
+                <li>Managed executive calendars and coordinated complex meetings.</li>
+                <li>Prioritised inbox items and supported timely communication.</li>
+                <li>Prepared briefing materials and maintained organised digital files.</li>
+                <li>Supported vendor coordination and budget tracking.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="experience-item reveal">
+            <div class="experience-date">APR 2025 — OCT 2025<span>7 months</span></div>
+            <div class="experience-content">
+              <h3>IB Gold</h3><p class="role">Executive Assistant</p>
+              <ul>
+                <li>Supported day-to-day executive operations and external enquiries.</li>
+                <li>Arranged travel itineraries and tracked expenses.</li>
+                <li>Recorded meeting minutes and followed up on cross-team actions.</li>
+                <li>Helped monitor office inventory and administrative needs.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="experience-item reveal">
+            <div class="experience-date">OCT 2023 — MAR 2025<span>1 year, 6 months</span></div>
+            <div class="experience-content">
+              <h3>Adeyinka Art</h3><p class="role">Administrative & Client Support</p>
+              <ul>
+                <li>Coordinated client communication and supported relationship management.</li>
+                <li>Helped organise logistics for art exhibitions and events.</li>
+                <li>Used Google Workspace to maintain digital trackers and records.</li>
+                <li>Assisted with proposals, invoices, and CRM updates.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section services" id="skills">
+      <div class="wrap tools-grid">
+        <div class="reveal">
+          <p class="eyebrow">Tools & strengths</p>
+          <h2>Organised work starts with the right habits and tools.</h2>
+          <p class="skills-copy">I combine practical organisation with digital tools to make information easier to find, tasks easier to follow, and communication easier to act on.</p>
+        </div>
+        <div class="skills-list reveal" aria-label="Professional skills">
+          <span class="skill featured">Calendar management</span>
+          <span class="skill featured">Meeting coordination</span>
+          <span class="skill featured">Confidentiality & discretion</span>
+          <span class="skill">Microsoft Word</span><span class="skill">Microsoft Excel</span>
+          <span class="skill">Microsoft PowerPoint</span><span class="skill">Google Workspace</span>
+          <span class="skill">CRM systems</span><span class="skill">Digital filing</span>
+          <span class="skill">Travel & logistics</span><span class="skill">Meeting minutes</span>
+          <span class="skill">Inbox prioritisation</span><span class="skill">Vendor coordination</span>
+          <span class="skill">Expense tracking</span><span class="skill">Task prioritisation</span>
+          <span class="skill">Stakeholder engagement</span><span class="skill">Event logistics</span>
+          <span class="skill">Workflow coordination</span><span class="skill">Data entry</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section work" id="work">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div><p class="eyebrow">A glimpse of my approach</p><h2>Useful systems. Clear handovers. Fewer loose ends.</h2></div>
+          <p class="section-intro">These illustrative examples show how I think about common administrative tasks. They are sample formats, not client-confidential documents or claims of completed projects.</p>
+        </div>
+        <div class="work-grid">
+          <article class="work-card reveal">
+            <div class="work-card-top"><span class="work-type">Sample 01 · Meetings</span><span class="work-index">01</span></div>
+            <h3>Meeting action tracker</h3>
+            <p>A simple way to turn meeting conversations into accountable next steps with an owner, due date, status, and follow-up note.</p>
+            <button class="sample-link" data-sample="meeting">Preview the sample <span aria-hidden="true">↗</span></button>
+            <div class="sample-note">Illustrative sample · No real client data</div>
+          </article>
+          <article class="work-card reveal">
+            <div class="work-card-top"><span class="work-type">Sample 02 · Travel</span><span class="work-index">02</span></div>
+            <h3>Travel itinerary outline</h3>
+            <p>A clear, at-a-glance plan for schedules, transport, accommodation, confirmations, and the details a traveller may need close by.</p>
+            <button class="sample-link" data-sample="travel">Preview the sample <span aria-hidden="true">↗</span></button>
+            <div class="sample-note">Illustrative sample · Example details only</div>
+          </article>
+          <article class="work-card reveal">
+            <div class="work-card-top"><span class="work-type">Sample 03 · Events</span><span class="work-index">03</span></div>
+            <h3>Event readiness checklist</h3>
+            <p>A practical checklist for logistics, supplier confirmations, materials, guest communication, and the final pre-event review.</p>
+            <button class="sample-link" data-sample="event">Preview the sample <span aria-hidden="true">↗</span></button>
+            <div class="sample-note">Illustrative sample · Example details only</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="education">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div><p class="eyebrow">Learning & development</p><h2>Building a stronger foundation, one skill at a time.</h2></div>
+          <p class="section-intro">Combining formal business education with practical professional development in administration and digital productivity.</p>
+        </div>
+        <div class="education-grid">
+          <article class="education-card reveal">
+            <p class="mini-label">Education</p>
+            <h3>B.Sc. Business Administration</h3>
+            <p>Kwara State University (KWASU)<br>Malete, Nigeria<br>In progress · Expected 2028</p>
+          </article>
+          <article class="education-card reveal">
+            <p class="mini-label">Professional development</p>
+            <h3>Executive Assistant & Administrative Management</h3>
+            <p>Professional development training.</p>
+            <div class="second-course"><h3>Digital Productivity & Workflow Optimization</h3><p>Professional training focused on Google Workspace and Microsoft 365 tools.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="wrap">
+        <div class="contact-panel reveal">
+          <div>
+            <p class="eyebrow">The next step</p>
+            <h2>Need a reliable person to help keep things moving?</h2>
+            <p>I’d be glad to talk about your team’s needs and how thoughtful administrative support can make the working day run more smoothly.</p>
+          </div>
+          <div class="contact-actions">
+            <a class="button" href="mailto:oyinkansola2563@gmail.com?subject=Executive%20Assistant%20Opportunity">Email me <span aria-hidden="true">↗</span></a>
+            <a class="button button-secondary" href="https://wa.me/2349056209534" target="_blank" rel="noopener noreferrer">Message on WhatsApp <span aria-hidden="true">↗</span></a>
+            <a class="button button-secondary" href="tel:+2349056209534">Call +234 905 620 9534</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <span>© <span id="year"></span> Audu Kanyinsola. Thoughtful support, thoughtfully delivered.</span>
+      <div class="footer-links"><a href="#home">Back to top ↑</a><a href="mailto:oyinkansola2563@gmail.com">Email</a><a href="tel:+2349056209534">Phone</a></div>
+    </div>
+  </footer>
+
+  <div class="modal" id="sampleModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-panel">
+      <div class="modal-head"><div><p class="eyebrow">Illustrative work sample</p><h3 id="modalTitle">Sample preview</h3></div><button class="modal-close" id="modalClose" aria-label="Close preview">×</button></div>
+      <div class="modal-body" id="modalBody"></div>
+      <div class="modal-footnote">This is a conceptual example created for this portfolio. It does not represent a real client, trip, meeting, or event.</div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var menuToggle = document.getElementById('menuToggle');
+      var navLinks = document.getElementById('navLinks');
+      menuToggle.addEventListener('click', function () {
+        var isOpen = navLinks.classList.toggle('open');
+        menuToggle.setAttribute('aria-expanded', String(isOpen));
+        menuToggle.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
+        menuToggle.textContent = isOpen ? '×' : '☰';
+      });
+      navLinks.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          navLinks.classList.remove('open');
+          menuToggle.setAttribute('aria-expanded', 'false');
+          menuToggle.setAttribute('aria-label', 'Open navigation');
+          menuToggle.textContent = '☰';
+        });
+      });
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      var samples = {
+        meeting: {
+          title: 'Meeting action tracker',
+          intro: 'A short, repeatable structure for keeping decisions and actions visible after a meeting.',
+          points: [
+            '<strong>Meeting:</strong> Weekly operations check-in',
+            '<strong>Decision:</strong> Confirm supplier delivery date before the next review',
+            '<strong>Action owner:</strong> Assigned team member',
+            '<strong>Due date:</strong> Before the next scheduled check-in',
+            '<strong>Status:</strong> Open · Follow-up needed',
+            '<strong>EA follow-up:</strong> Send a reminder ahead of the due date and update the action log when confirmed'
+          ]
+        },
+        travel: {
+          title: 'Travel itinerary outline',
+          intro: 'A single reference point for a hypothetical business trip, designed so important details are easy to find.',
+          points: [
+            '<strong>Trip overview:</strong> Destination, traveller, travel dates, and purpose',
+            '<strong>Transport:</strong> Departure and arrival details with booking references',
+            '<strong>Accommodation:</strong> Hotel, check-in/check-out dates, and confirmation number',
+            '<strong>Schedule:</strong> Meeting times, addresses, and contact names',
+            '<strong>Travel notes:</strong> Required documents, transfer details, and contingency contacts',
+            '<strong>Before departure:</strong> Reconfirm bookings and share the final itinerary'
+          ]
+        },
+        event: {
+          title: 'Event readiness checklist',
+          intro: 'A practical pre-event checklist that helps coordinate people, supplies, and timings.',
+          points: [
+            '<strong>Venue:</strong> Booking, access time, layout, and equipment confirmed',
+            '<strong>Suppliers:</strong> Contact details, delivery windows, and outstanding balances checked',
+            '<strong>Guests:</strong> Invitation list, attendance responses, and reminder message ready',
+            '<strong>Materials:</strong> Signage, name tags, presentation files, and printed copies prepared',
+            '<strong>Run of show:</strong> Timings, responsible contacts, and handover points agreed',
+            '<strong>Final review:</strong> Walk through the venue and confirm open items with owners'
+          ]
+        }
+      };
+      var modal = document.getElementById('sampleModal');
+      var modalTitle = document.getElementById('modalTitle');
+      var modalBody = document.getElementById('modalBody');
+      var modalClose = document.getElementById('modalClose');
+      document.querySelectorAll('[data-sample]').forEach(function (button) {
+        button.addEventListener('click', function () {
+          var sample = samples[button.getAttribute('data-sample')];
+          if (!sample) return;
+          modalTitle.textContent = sample.title;
+          modalBody.innerHTML = '<p>' + sample.intro + '</p><ul>' + sample.points.map(function (point) { return '<li>' + point + '</li>'; }).join('') + '</ul>';
+          modal.classList.add('open');
+          modalClose.focus();
+        });
+      });
+      function closeModal() {
+        modal.classList.remove('open');
+      }
+      modalClose.addEventListener('click', closeModal);
+      modal.addEventListener('click', function (event) { if (event.target === modal) closeModal(); });
+      document.addEventListener('keydown', function (event) { if (event.key === 'Escape') closeModal(); });
+
+      if ('IntersectionObserver' in window) {
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12 });
+        document.querySelectorAll('.reveal').forEach(function (el) { observer.observe(el); });
+      } else {
+        document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('visible'); });
+      }
+    }());
+  </script>
+</body>
+</html>
