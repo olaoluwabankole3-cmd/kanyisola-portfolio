@@ -71,15 +71,12 @@
     .orb { position: absolute; width: 385px; height: 385px; border-radius: 50%; background: radial-gradient(circle at 31% 25%, #e1f3ed 0, #b7dbd2 43%, #8bbab2 72%, #7badab 100%); opacity: .8; }
     .orb::before, .orb::after { content: ""; position: absolute; border-radius: 50%; border: 1px solid rgba(16,43,58,.15); inset: -25px; }
     .orb::after { inset: -52px; border-color: rgba(16,43,58,.08); }
-    .profile-card { position: relative; z-index: 1; width: min(100%, 355px); padding: 28px; background: rgba(255,254,250,.91); border: 1px solid rgba(255,255,255,.8); border-radius: 26px; box-shadow: var(--shadow); transform: rotate(2.5deg); }
-    .profile-top { display: flex; align-items: center; gap: 13px; padding-bottom: 23px; border-bottom: 1px solid var(--line); }
-    .monogram { display: grid; place-items: center; width: 58px; height: 58px; border-radius: 18px; color: white; background: var(--ink); font-family: Georgia, serif; font-size: 1.5rem; letter-spacing: -.06em; }
-    .profile-top strong { display: block; font-size: 1rem; letter-spacing: -.025em; }
-    .profile-top small { color: var(--muted); font-size: .8rem; }
-    .card-label { color: var(--teal); font-size: .72rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; margin: 23px 0 13px; }
-    .promise { display: flex; gap: 12px; align-items: flex-start; padding: 12px 0; font-size: .91rem; font-weight: 650; border-bottom: 1px solid rgba(16,43,58,.075); }
-    .promise:last-of-type { border-bottom: 0; }
-    .check { display: grid; place-items: center; flex: 0 0 24px; width: 24px; height: 24px; border-radius: 50%; background: var(--mint); color: var(--teal-dark); font-size: .82rem; }
+    .portrait-card { position:relative; z-index:1; display:block; margin:0; width:min(100%,355px); aspect-ratio:2/3; padding:0; overflow:hidden; background:#b7a798; border:5px solid rgba(255,254,250,.94); border-radius:180px 180px 26px 26px; outline:1px solid rgba(214,166,79,.62); outline-offset:4px; box-shadow:var(--shadow); transform:rotate(2.5deg); }
+    .portrait-image { display:block; width:100%; height:100%; object-fit:cover; object-position:center 44%; }
+    .portrait-card::after { content:""; position:absolute; inset:42% 0 0; z-index:1; background:linear-gradient(180deg,transparent 0%,rgba(16,43,58,.06) 25%,rgba(16,43,58,.82) 100%); pointer-events:none; }
+    .portrait-caption { position:absolute; z-index:2; left:24px; right:19px; bottom:23px; display:grid; gap:5px; color:#fffefa; }
+    .portrait-caption strong { font-size:1.18rem; line-height:1.12; letter-spacing:-.035em; }
+    .portrait-caption span { color:rgba(255,254,250,.84); font-size:.7rem; line-height:1.5; letter-spacing:.09em; text-transform:uppercase; }
     .floating-note { position: absolute; z-index: 2; background: var(--ink); color: white; border-radius: 16px; box-shadow: 0 16px 36px rgba(16,43,58,.17); padding: 15px 18px; font-size: .8rem; }
     .floating-note strong { display: block; font-size: 1rem; margin-bottom: 2px; }
     .note-one { top: 40px; right: -4px; transform: rotate(-4deg); }
@@ -191,7 +188,7 @@
       .hero-grid { grid-template-columns: 1fr; gap: 14px; }
       h1 { font-size: clamp(3.4rem, 15vw, 5rem); }
       .hero-visual { min-height: 430px; }
-      .profile-card { max-width: 340px; }
+      .portrait-card { max-width: 340px; }
       .note-one { right: 1%; top: 20px; }
       .note-two { left: 0; bottom: 15px; }
       .section-head { display: block; }
@@ -219,7 +216,7 @@
       .hero-actions .button { width: 100%; }
       .hero-visual { min-height: 400px; }
       .orb { width: 270px; height: 270px; }
-      .profile-card { padding: 22px; }
+      .portrait-card { padding: 22px; }
       .note-one, .note-two { font-size: .72rem; }
       .contact-actions { flex-direction: column; }
     }
@@ -234,10 +231,10 @@
     .hero-copy h1 span { position: relative; width: fit-content; }
     .hero-copy h1 span::after { content: ""; display: block; height: 5px; width: 75%; margin-top: 10px; border-radius: 99px; background: linear-gradient(90deg, var(--gold), rgba(214,166,79,0)); transform-origin: left; animation: line-grow 1s .55s cubic-bezier(.2,.8,.2,1) both; }
     .orb { animation: orb-breathe 8s ease-in-out infinite alternate; will-change: transform; }
-    .profile-card { animation: card-float 6.5s ease-in-out infinite; will-change: transform; }
+    .portrait-card { animation: card-float 6.5s ease-in-out infinite; will-change: transform; }
     .note-one { animation: note-float 5.5s ease-in-out infinite; }
     .note-two { animation: note-float 6.5s 1s ease-in-out infinite reverse; }
-    .profile-card, .floating-note { backface-visibility: hidden; }
+    .portrait-card, .floating-note { backface-visibility: hidden; }
     .brand-mark { transition: transform .3s ease, border-radius .3s ease; }
     .brand:hover .brand-mark { transform: rotate(-7deg) scale(1.04); border-radius: 17px 12px 17px 12px; }
     .nav-links a { position: relative; transition: color .2s ease; }
@@ -276,7 +273,7 @@
       .hero-grid { gap: 24px; grid-template-columns: minmax(0,1fr) minmax(300px,.84fr); }
       .hero-visual { min-height: 430px; }
       .orb { width: 300px; height: 300px; }
-      .profile-card { padding: 23px; }
+      .portrait-card { padding: 23px; }
       .note-one { right: -2px; }
       .note-two { left: -2px; }
       .about-grid { gap: 42px; }
@@ -287,7 +284,7 @@
       .hero-copy { max-width: 740px; }
       .hero-visual { min-height: 455px; }
       .orb { width: 330px; height: 330px; }
-      .profile-card { width: min(100%, 355px); padding: 28px; }
+      .portrait-card { width: min(100%, 355px); padding: 28px; }
       .note-one { right: max(2%, calc((100% - 520px) / 2)); }
       .note-two { left: max(2%, calc((100% - 520px) / 2)); }
       .about-grid, .tools-grid { grid-template-columns: 1fr; gap: 34px; }
@@ -298,7 +295,7 @@
       .hero-copy { animation-duration: .6s; }
       .hero-visual { min-height: 420px; margin-inline: auto; width: 100%; max-width: 540px; }
       .orb { width: min(78vw, 320px); height: min(78vw, 320px); }
-      .profile-card { max-width: min(355px, calc(100% - 26px)); }
+      .portrait-card { max-width: min(355px, calc(100% - 26px)); }
       .floating-note { max-width: 76%; }
       .note-one { right: 0; top: 14px; }
       .note-two { left: 0; bottom: 12px; }
@@ -328,12 +325,7 @@
       .hero-meta { align-items: flex-start; font-size: .79rem; }
       .hero-visual { min-height: 385px; margin-top: 8px; }
       .orb { width: min(76vw, 285px); height: min(76vw, 285px); }
-      .profile-card { padding: 19px; border-radius: 21px; }
-      .profile-top { padding-bottom: 17px; gap: 10px; }
-      .monogram { width: 49px; height: 49px; border-radius: 15px; font-size: 1.3rem; }
-      .card-label { margin: 18px 0 8px; font-size: .66rem; }
-      .promise { padding: 10px 0; font-size: .82rem; gap: 9px; }
-      .check { width: 22px; height: 22px; flex-basis: 22px; }
+      .portrait-card { padding: 19px; border-radius: 21px; }
       .floating-note { padding: 11px 13px; font-size: .7rem; border-radius: 12px; }
       .floating-note strong { font-size: .82rem; }
       .note-one { top: 4px; right: -1px; }
@@ -381,6 +373,8 @@
       .work-card h3, .work-card .sample-link { color: var(--ink); }
       .work-card .sample-note { color: #82621e; }
     }
+    .portrait-card { padding:0; }
+    @media (max-width:480px) { .portrait-card { padding:0; border-radius:150px 150px 22px 22px; } }
   </style>
 </head>
 <body>
@@ -420,19 +414,13 @@
             Based in Nigeria <span aria-hidden="true">·</span> Open to meaningful opportunities
           </div>
         </div>
-        <div class="hero-visual" aria-label="Introduction card">
-          <div class="orb"></div>
+        <div class="hero-visual" aria-label="Studio portrait of Audu Kanyinsola">
+          <div class="orb" aria-hidden="true"></div>
           <div class="floating-note note-one"><strong>Calm, clear, considered.</strong>Even when the day gets busy.</div>
-          <div class="profile-card">
-            <div class="profile-top">
-              <div class="monogram">AK</div>
-              <div><strong>Audu Kanyinsola</strong><small>Executive Assistant</small></div>
-            </div>
-            <p class="card-label">The support I bring</p>
-            <div class="promise"><span class="check">✓</span><span>Organised calendars and purposeful meetings</span></div>
-            <div class="promise"><span class="check">✓</span><span>Clear communication and thoughtful follow-through</span></div>
-            <div class="promise"><span class="check">✓</span><span>Reliable records, coordination, and office workflows</span></div>
-          </div>
+          <figure class="portrait-card">
+            <img class="portrait-image" src="assets/kanyisola-portrait.webp" alt="Audu Kanyinsola wearing a black headscarf, white collared shirt, and charcoal draped overlay against a warm studio backdrop." width="512" height="768" fetchpriority="high" decoding="async">
+            <figcaption class="portrait-caption"><strong>Audu Kanyinsola</strong><span>Executive Assistant · Administrative Professional</span></figcaption>
+          </figure>
           <div class="floating-note note-two"><strong>Details matter.</strong>So does the bigger picture.</div>
         </div>
       </div>
